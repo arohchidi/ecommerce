@@ -1,0 +1,152 @@
+ <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Mailbox</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Mailbox</li>
+                        </ol>
+                    </div>
+                    
+                      <% if (info && typeof info != 'undefined' && info != '')  { %>
+                        <div class="col-md-6 col-md-offset-3 text_align pull-right alert alert-success" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= info %></div>
+                        <% }  %>
+                    
+                      <% if (errors && typeof errors != 'undefined' && errors != '')  { %>
+                        <div class="col-md-6 col-md-offset-3 text_align pull-right alert alert-success" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= errors %></div>
+                        <% }  %>
+                    
+                    <div class="">
+                        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right ml-10"><i class="ti-settings text-white"></i></button>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+               
+<div class="row">
+   
+          <!-- Column -->
+          <div class="col-lg-12 col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title mb-20 mt-0 align-self-center"> 
+                  
+                   
+                
+                    Add A Product  Category</h5>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                    
+                      <form class="form-horizontal" method="POST" action="upload_category">
+                   
+               
+                 
+                      <div class="form-wrap form-wrap2 col-12 mt-4">
+                        
+                          <div class="col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <label class="control-label text-primary font-12">Parent Category</label>
+                              <div>
+                                   <input type="text" class="form-control font-14"  name="category_name" value="">
+                                
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                         
+                          <div class="form-group bt-switch row">
+                           
+                            <div class="col-md-6 text-right pr-30">
+                              <div class="5">
+                                <button type="submit" class="btn waves-effect waves-light btn-primary">Save</button>
+                                <button type="button" class="btn waves-effect waves-light btn-outline-default">Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <hr>
+                  <div class="card-body">
+                <h5 class="card-title mb-20 mt-0 align-self-center"> 
+                  
+                   
+                
+                    Add A  Subcategory</h5>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                    
+                      <form class="form-horizontal" method="POST" action="upload_subcategory">
+                   
+               
+                 
+                      <div class="form-wrap form-wrap2 col-12 mt-4">
+                        
+                          <div class="col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              
+                              
+                                  <label class="control-label text-primary font-12 for="subcategory"">Subcategory Name</label>
+                                   <input type="text" class="form-control font-14"  name="name" value="">
+                                
+                              </div>
+                                <br />
+                               <div class="form-group">
+                                    <label class="control-label text-primary font-12" for="parent">Parent Category</label>
+                                 <select class="custom-select font-14" data-style="btn-default btn-outline" name="category_name">
+                                    <option  data-tokens="Category">Select Parent Category</option>
+                                      <% for(var i = 0; i < categories.length; i++) { %>
+                                    <option data-tokens="Home Accessories" value="<%= categories[i].category_name%>"><%= categories[i].category_name%></option>
+                                    <% } %>
+                                      
+                                    
+                                      
+                                  </select>
+                                </div>
+                            </div>
+                          </div>
+                          
+                          
+                         
+                          <div class="form-group bt-switch row">
+                           
+                            <div class="col-md-6 text-right pr-30">
+                              <div class="5">
+                                <button type="submit" class="btn waves-effect waves-light btn-primary">Save</button>
+                                <button type="button" class="btn waves-effect waves-light btn-outline-default">Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+			   <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->

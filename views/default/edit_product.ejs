@@ -1,0 +1,102 @@
+<% include ../admin_partials/header.ejs %>
+  <% include ../admin_partials/nav.ejs %>
+  <body>
+          <% include ../body/edit_product.ejs %>
+      <% include ../admin_partials/footer.ejs %>
+  </body>
+
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/vendors/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="../assets/vendors/product-slider/product-slider.js"></script>
+<script src="../assets/vendors/product-slider/product-slider.init.js"></script>
+<script src="../assets/vendors/dropify/dist/js/dropify.min.js"></script>
+    <script>
+    $(function() {
+        // Basic
+        $('.dropify').dropify();
+
+        // Translated
+        $('.dropify-fr').dropify({
+            messages: {
+                default: 'Glissez-déposez un fichier ici ou cliquez',
+                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                remove: 'Supprimer',
+                error: 'Désolé, le fichier trop volumineux'
+            }
+        });
+
+        // Used events
+        var drEvent = $('#input-file-events').dropify();
+
+        drEvent.on('dropify.beforeClear', function(event, element) {
+            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+        });
+
+        drEvent.on('dropify.afterClear', function(event, element) {
+            alert('File deleted');
+        });
+
+        drEvent.on('dropify.errors', function(event, element) {
+            console.log('Has Errors');
+        });
+
+        var drDestroy = $('#input-file-to-destroy').dropify();
+        drDestroy = drDestroy.data('dropify')
+        $('#toggleDropify').on('click', function(e) {
+            e.preventDefault();
+            if (drDestroy.isDropified()) {
+                drDestroy.destroy();
+            } else {
+                drDestroy.init();
+            }
+        })
+    });
+    </script>
+ <script src="../assets/vendors/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+ 
+ <script src="../assets/vendors/bootstrap-switch/bootstrap-switch.min.js"></script>
+    <script type="text/javascript">
+    $(".bt-switch input[type='checkbox'], .bt-switch input[type='radio']").bootstrapSwitch();
+    var radioswitch = function() {
+        var bt = function() {
+            $(".radio-switch").on("switch-change", function() {
+                $(".radio-switch").bootstrapSwitch("toggleRadioState")
+            }), $(".radio-switch").on("switch-change", function() {
+                $(".radio-switch").bootstrapSwitch("toggleRadioStateAllowUncheck")
+            }), $(".radio-switch").on("switch-change", function() {
+                $(".radio-switch").bootstrapSwitch("toggleRadioStateAllowUncheck", !1)
+            })
+        };
+        return {
+            init: function() {
+                bt()
+            }
+        }
+    }();
+    $(function() {
+        radioswitch.init()
+    });
+    </script>
+
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/vendors/ps/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="../assets/vendors/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="../assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="../assets/vendors/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+

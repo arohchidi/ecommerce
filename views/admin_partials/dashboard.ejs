@@ -1,0 +1,232 @@
+  <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+       
+<div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Ecommerce Dashboard</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Ecommerce Dashboard</li>
+                        </ol>
+                    </div>
+                     <% if (loginSuccess && typeof loginSuccess != 'undefined' && loginSuccess != '')  { %>
+                        <div class="col-md-10 col-md-offset-3 text_align pull-right alert alert-success" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= loginSuccess %></div>
+                        <% }  %>
+                    
+                    <div class="">
+                        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right ml-10"><i class="ti-settings text-white"></i></button>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Info box -->
+                <!-- ============================================================== -->
+               
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex pa-10 no-block">
+                                    <div class="align-self-center display-6 mr-20"><i class="text-success icon-Target-Market"></i></div>
+                                    <div class="align-slef-center">
+                                        <h2 class="mb-0"><%= dailysale %> <small><i class="ti-angle-down text-danger"></i></small></h2>
+                                        <h6 class="text-muted mb-0">Daily orders</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---column---->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex pa-10 no-block">
+                                    <div class="align-self-center display-6 mr-20"><i class="text-success icon-Target-Market"></i></div>
+                                    <div class="align-slef-center">
+                                        <h2 class="mb-0"><%= weeklysale %> <small><i class="ti-angle-down text-danger"></i></small></h2>
+                                        <h6 class="text-muted mb-0">Weekly orders</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                     <div class="col-lg-4 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex pa-10 no-block">
+                                    <div class="align-self-center display-6 mr-20"><i class="text-success icon-Target-Market"></i></div>
+                                    <div class="align-slef-center">
+                                        <h2 class="mb-0"><%= monthlysale %> <small><i class="ti-angle-down text-danger"></i></small></h2>
+                                        <h6 class="text-muted mb-0">Monthly orders</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex pa-10 no-block">
+                                    <div class="align-self-center display-6 mr-20"><i class="text-info icon-Dollar-Sign"></i></div>
+                                    <div class="align-slef-center">
+                                        <h2 class="mb-0">$8,759 <small><i class="ti-angle-up text-success"></i></small></h2>
+                                        <h6 class="text-muted mb-0">Total Revenue</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex pa-10 no-block">
+                                    <div class="align-self-center display-6 mr-20"><i class="text-primary icon-Inbox-Forward"></i></div>
+                                    <div class="align-slef-center">
+                                        <h2 class="mb-0">2,356 <small><i class="ti-angle-up text-success"></i></small></h2>
+                                        <h6 class="text-muted mb-0">Daily sales</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex pa-10 no-block">
+                                    <div class="align-self-center display-6 mr-20"><i class="text-danger icon-Contrast"></i></div>
+                                    <div class="align-slef-center">
+                                        <h2 class="mb-0">38% <small><i class="ti-angle-down text-danger"></i></small></h2>
+                                        <h6 class="text-muted mb-0">Total users</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Info box -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                
+              
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Customers of the Month</h5>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <select class="custom-select b-0">
+                                            <option selected="">January</option>
+                                            <option value="1">February</option>
+                                            <option value="2">March</option>
+                                            <option value="3">April</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="table-responsive mt-20 no-wrap">
+                                    <table class="table vm no-th-brd pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Assigned</th>
+                                                <th>Name</th>
+                                                <th>Priority</th>
+                                                <th>Budget</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <% for(var i=0;i < customersOfTheMonth.length;i++) { %>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round">S</span></td>
+                                                <td>
+                                                    <h6><%=customersOfTheMonth[i].firstname %></h6><small class="text-muted"><%=customersOfTheMonth[i].lastname %></small></td>
+                                                <td>Admin</td>
+                                                <td><span class="label label-success label-rounded">Low</span></td>
+                                                <td>$3.9K</td>
+                                            </tr>
+                                           
+                                            
+                                            
+                                            
+                                        </tbody>
+                                        <% }  %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Projects of the Month -->
+				<!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- End Page Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <script src="../assets/vendors/jquery/jquery.min.js"></script>
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="../assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/vendors/ps/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="../js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--sparkline JavaScript -->
+    <script src="../assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+    <!--morris JavaScript -->
+    <script src="../assets/vendors/raphael/raphael-min.js"></script>
+    <script src="../assets/vendors/morrisjs/morris.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../assets/vendors/d3/d3.min.js"></script>
+    <script src="../assets/vendors/c3-master/c3.min.js"></script>
+    <!-- Vector map JavaScript -->
+    <script src="../assets/vendors/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="../assets/vendors/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- Chart JS -->
+    <script src="../js/dashboard2.js"></script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="../assets/vendors/styleswitcher/jQuery.style.switcher.js"></script>

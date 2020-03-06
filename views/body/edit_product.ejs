@@ -1,0 +1,215 @@
+ <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Mailbox</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Mailbox</li>
+                        </ol>
+                    </div>
+                    <% if (editSuccess && typeof editSuccess != 'undefined' && editSuccess != '')  { %>
+                        <div class="col-md-6 col-md-offset-0 text_align pull-right alert alert-success" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= editSuccess %></div>
+                        <% }  %>
+                    
+                    <% if (uploadError && typeof  uploadError != 'undefined' &&  uploadError != '')  { %>
+                        <div class="col-md-6 col-md-offset-0 text_align pull-right alert alert-danger" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%=  uploadError %></div>
+                        <% }  %>
+                    
+                   
+                    <div class="">
+                        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right ml-10"><i class="ti-settings text-white"></i></button>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+               
+<div class="row">
+    <% if(uploadError) { %>
+    <% if ( typeof uploadError != 'undefined')  { %>
+                         <%= uploadError %>
+                        <% }  %>
+    <% }  %>
+	  <% if(editSuccess) { %>
+    <% if ( typeof editSuccess != 'undefined')  { %>
+                         <%= editSuccess %>
+                        <% }  %>
+    <% }  %>
+          <!-- Column -->
+          <div class="col-lg-12 col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title mb-20 mt-0 align-self-center"> 
+                  
+                   
+                
+                    Add new Product</h5>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="relative">
+                      <div id="amazingslider-wrapper-1" class="mb-40">
+                        <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
+                          <ul class="amazingslider-slides" style="display:none;">
+                            <li><img src="../<%= products.imagePath %>" alt="" title="" /></a>
+                          </ul>
+                          <ul class="amazingslider-thumbnails" style="display:none;">
+                            <li><img src="../<%= products.imagePath %>" alt="" title="" /></li>
+                            
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                      <form class="form-horizontal" method="POST" action="edit_product/<%=products.id %>" enctype="multipart/form-data">
+                    <div class="upload-photo">
+                      <input type="file"  class="dropify"  name="photo" />
+                    </div>
+                  </div>
+               
+                  <!-- End of product slider -->
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="form-wrap form-wrap2 col-12 mt-4">
+                        
+                          <div class="col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <label class="control-label text-primary font-12"></label>
+                              <div>
+                                   <input type="hidden" class="form-control font-14"  name="id" value=" <%= products.id %>">
+                                <input type="text" class="form-control font-14"  name="title" value=" <%= products.title %>">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                          <div class="form-group">
+                            <div class="row m-0">
+                              <div class="col-sm-6 col-xs-12">
+                                <label class="control-label font-14">Select Category</label>
+                                <div>
+                                  <select class="custom-select font-14" data-style="btn-default btn-outline" name="category">
+                                    <option  data-tokens="Category">Select Category </option>
+                                    <option data-tokens="Home Accessories" value="Home Accessories">Home Accessories</option>
+                                    <option data-tokens="Electronics" value="Electronics">Electronics</option>
+                                      
+                                    <option data-tokens="Men Fashion" value="Men Fashion">Men Fashion</option>
+                                      
+                                    <option data-tokens="Women Fashion" value="Women Fashion">Women Fashion</option>  
+                                      
+                                      
+                                      <option data-tokens="Smart Phone" value="Smart Phones & Tablets">Smart Phones & Tablets </option>
+                                      
+                                      <option data-tokens="Laptop" value="Laptop">Laptop</option>
+                                      
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-md-6 col-xs-12">
+                                <label class="control-label font-14">SKU identification</label>
+                                <div >
+                                  <input type="text" class="form-control font-14"  placeholder="SKU" name="sku" value="<%products.sku %>">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                          <div class="form-group">
+                            <div class="row m-0">
+                              <div class="col-md-3 col-xs-12">
+                                <label class="control-label font-14">Unit Price</label>
+                                <div>
+                                  <input type="text" class="form-control font-14"  value =" <%= products.price %>" name="price">
+                                </div>
+                              </div>
+                              <div class="col-md-6 col-xs-12">
+                                <label class="control-label font-14 ">Currency</label>
+                                <div >
+                                  <select class="custom-select" data-style="btn-default btn-outline" name="currency">
+                                    <option  data-tokens="Category">Currency</option>
+                                    <option data-tokens="$" value="$">USD</option>
+                                   
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-md-3 col-xs-12">
+                                <label class="control-label">Quantity</label>
+                                <div>
+                                  <input type="text" class="form-control font-14"  placeholder="Quantity" name="qty">
+                                </div>
+                              </div>
+                                <div class="col-md-3 col-xs-12">
+                                <label class="control-label">Size</label>
+                                <div>
+                                  <input type="text" class="form-control font-14"  placeholder="Size" name="size">
+                                </div>
+                              </div>
+                                <div class="col-md-3 col-xs-12">
+                                <label class="control-label">Color</label>
+                                <div>
+                                  <input type="text" class="form-control font-14"  placeholder="Color" name="color">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                          <div class="form-group">
+                            <div class="col-sm-12">
+                              <label class="control-label">Tags</label>
+                              <div class="tags-default">
+                                   <select multiple data-role="tagsinput" name="tags">
+                                    <option value="laptop">laptop</option>
+                                    <option value="black">black</option>
+                                    <option value="white">white</option>
+                                    <option value="phone">phone</option>
+                                    <option value="iphone">iphone</option>
+                                    <option value="denim">denim</option>  
+                                    <option value="vuitton">vuitton</option>  
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label class="col-12">Description</label>
+                              <div class="col-12">
+                                <textarea class="form-control textarea-lg" name="description" value="
+                   
+                   
+                    "><%= products.description %></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group bt-switch row">
+                           
+                            <div class="col-md-6 text-right pr-30">
+                              <div class="5">
+                                <button type="submit" class="btn waves-effect waves-light btn-primary">Save</button>
+                                <button type="button" class="btn waves-effect waves-light btn-outline-default">Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+			   <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->

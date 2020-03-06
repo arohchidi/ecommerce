@@ -1,0 +1,76 @@
+<!--Breadcrumb Area End-->
+	    <!--Register Area Strat-->
+		<div class="register-area mt-80">
+		    <div class="container">
+		        <div class="row">
+                      <% if (passwordMismatch && typeof passwordMismatch != 'undefined' && passwordMismatch != '')  { %>
+                        <div class="col-md-10 col-md-offset-4 text_align pull-right alert alert-danger" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= passwordMismatch %></div>
+                        <% }  %>  
+                    
+                    
+                    <% if (lengthError && typeof lengthError!= 'undefined' && lengthError != '')  { %>
+                        <div class="col-md-10 col-md-offset-4 text_align pull-right alert alert-danger" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= lengthError %></div>
+                        <% }  %>  
+                    
+		            <div class="col-md-12 col-12 col-lg-6 col-xl-6 ml-auto mr-auto">
+		                <div class="login">
+		                    <div class="login-form-container">
+							<% if(errors) { %>
+                               
+                  
+              <% for(var i = 0; i < errors.length; i++){ %>
+                 
+              
+              
+              <li class="list-group-item text-danger"><%= errors[i] %></li>
+            <% } %>
+          
+              <% } %>
+                                
+                              
+                                
+                                
+                         
+                                    
+                                
+                               
+		                        <div class="login-form">
+		                            <form action="/user_account_creation" method="POST">
+                                        
+                                        <p>Already have an account? <a href="/users/login">Log in instead!</a></p>
+		                                <label>Username</label>
+		                               
+		                                
+                                        <input name="username" type="text">
+		                                <label>Email</label>
+                                        <input name="email" type="email">
+		                                <label>Password</label>
+                                        <input name="password" type="password">
+                                        <label>Confirm Password</label>
+                                        <input name="confirm_password" type="password">
+                                        
+                                        <span class="custom-checkbox">
+                                            <input name="optin" value="1" type="checkbox">
+                                            <label>Receive offers from our partners</label>
+                                        </span>
+                                        <span class="custom-checkbox">
+                                            <input name="newsletter" value="1" type="checkbox">
+                                            <label>Sign up for our newsletter<br><em>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</em></label>
+                                        </span>
+                                        
+                                        <div class="button-box">
+                                               <button type="submit" class="btn waves-effect waves-light btn-primary">Save</button>
+                                <button type="button" class="btn waves-effect waves-light btn-outline-default">Cancel</button>
+                                        </div>
+                                       
+		                            </form>
+		                        </div>
+		                    </div>
+                            
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Register Area End-->
+		

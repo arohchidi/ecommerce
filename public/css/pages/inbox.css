@@ -1,0 +1,45 @@
+/*
+Template Name: Hyrax UX Admin
+Author: SRGIT
+Email: 
+File: css
+*/
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Light colors*/
+/*Normal Color*/
+/*Extra Variable*/
+/*******************
+Email inbox Page
+******************/
+.inbox-panel .list-group .list-group-item {
+  border: 0px;
+  border-radius: 0px;
+  border-left: 3px solid transparent; }
+  .inbox-panel .list-group .list-group-item a {
+    color: #cdcdcd; }
+	.list-group-item{    background: rgba(0,0,0,0.5);}
+  .inbox-panel .list-group .list-group-item.active, .inbox-panel .list-group .list-group-item:hover {
+    background: rgba(0,0,0,0.8);
+    border-left: 3px solid #398bf7; }
+
+.inbox-center .unread td {
+  font-weight: 400; }
+
+.inbox-center td {
+  vertical-align: middle;
+  white-space: nowrap; }
+
+.inbox-center a {
+  color: #67757c;
+  padding: 2px 0 3px 0;
+  overflow: hidden;
+  vertical-align: middle;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block; }
+
+.inbox-center .checkbox {
+  margin-top: -13px;
+  height: 20px; }

@@ -1,0 +1,163 @@
+
+
+
+		<div class="breadcrumb-area">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <div class="breadcrumb-content text-center">
+                            <h1 class="breadmome-name"></h1>
+		                    <ul>
+		                        <li><a href="/">Home</a></li>
+		                        <li class="active">Search</li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Breadcrumb Area End-->
+		<!--Shop Area Start-->
+		<div class="shop-area mt-80">
+		    <div class="container">
+		        <div class="row">
+		            
+		            <div class="col-lg-12 order-1 order-lg-2">
+		                <div class="shop-layout">
+		                    <!--Grid & List View Start-->
+		                    <div class="shop-topbar-wrapper mb-30 d-md-flex justify-content-md-between align-items-center">
+		                        <div class="grid-list-option">
+		                             
+                                    <p class="show-product">Showing page <%= current %> of <%= count %> item(s)</p>
+                                    
+		                         </div>
+		                         <!--Toolbar Short Area Start-->
+		                         <div class="toolbar-short-area d-md-flex align-items-center">
+                                     <div class="toolbar-shorter">
+                                        <label>Sort By:</label>
+                                         <form method="get" action="/search_filter/1">
+                                             <input type="hidden" value="<%=  search_query %>" name="search_query" />
+                                               <select class="wide nice-select" name="query">
+                                             <option value="title">Name</option>
+                                             <option value="price">Price</option>
+                                            
+                                            
+                                         </select>
+                                             <br /> <br /> <br />
+                                           <select name="order">
+                                             <option value="ascending">Ascending </option>
+                                             <option value="descending">Descending</option>
+                                             
+                                             </select> 
+                                              <br /> <br /> <br />
+                                             
+                                           
+                                        
+                                                       
+                                                        <button id="mc-submit" class="btn btn-info">Filter</button>
+                                                    
+                                         </form>
+                                       
+                                        
+                                     </div>
+                                 </div>
+		                         <!--Toolbar Short Area End-->
+		                    </div>
+		                    <!--Grid & List View End-->
+		                    <!--Shop Product Start-->
+                            
+		                    <div class="shop-product">
+		                        <div id="myTabContent-2" class="tab-content">
+		                            <div id="grid" class="tab-pane fade show active">
+		                                <div class="product-grid-view">
+		                                    <div class="row">
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
+                    <% for(var i = 0; i<products.length; i++) { %>
+                                                <div class="col-lg-4 col-xl-4 col-md-4">
+                                                    <!--Single Product Start-->
+                                                    <div class="single-product mb-30">
+                                                        <div class="product-img">
+                                                            <a href="/product-details/<%= products[i].id  %>">
+                                                                <img class="first-img" src="../<%= products[i].imagePath %>" alt="" width="100%" height="300">
+                                                               
+                                                            </a>
+                                                             <% var sub = products[i].listprice - products[i].price;
+                                              var discount = Math.trunc(sub * 100/products[i].listprice);
+                                            %>
+                                            <% if(products[i].listprice) { %>
+                                            <span class="sticker">-<%= discount %>%</span>
+                                            <% } %>
+                                                            
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h4><a href="single-product.html"><%= products[i].title %></a></h4>
+                                                            <div class="product-price">
+                                                                <span class="price"><%= products[i].currency %><%= products[i].price %></span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <!--Single Product End-->
+                                                </div>
+                                                <% } %>
+		                                    </div>
+                                             
+		                                </div>
+		                            </div>
+		           
+		                            <!--Pagination Start-->
+                                    <div class="pagination-product d-md-flex justify-content-md-between align-items-center">
+                                      <div class="showing-product">
+                                          <p> Showing page <%= current %> of <%= count %> item(s) </p>
+                                      </div>
+                                      <div class="page-list">
+                                          <% if (pages > 0) { %>
+                <ul class="pagination text-center">
+                    <% if (current == 1) { %>
+                        <li class="disabled"><a>First</a></li>
+                    <% } else { %>
+                        <li><a href="/search_filter/1?search_query=<%=search_query %>&?query=<%=query_param %>&?order=<%=order_param %>">First</a></li>
+                    <% } %>
+                    <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                    <% if (i !== 1) { %>
+                        <li class="disabled"><a>...</a></li>
+                    <% } %>
+                    <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                        <% if (i == current) { %>
+                            <li class="active"><a><%= i %></a></li>
+                        <% } else { %>
+                            <li><a href="/search_filter/<%= i %>?search_query=<%=search_query %>&?query=<%=query_param %>&?order=<%=order_param %>"><%= i %></a></li>
+                        <% } %>
+                        <% if (i == Number(current) + 4 && i < pages) { %>
+                            <li class="disabled"><a>...</a></li>
+                        <% } %>
+                    <% } %>
+                    <% if (current == pages) { %>
+                        <li class="disabled"><a>Last</a></li>
+                    <% } else { %>
+                        <li><a href="/search_filter/<%= pages %>?search_query=<%=search_query %>&?query=<%=query_param %>&?order=<%=order_param %>">Last</a></li>
+                    <% } %>
+                </ul>
+            <% } %>
+                                          
+                                      </div>
+                                    </div>
+		                            <!--Pagination End-->
+		                        </div>
+		                    </div>
+		                    <!--Shop Product End-->
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Shop Area End-->
+		

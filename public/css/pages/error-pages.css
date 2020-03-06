@@ -1,0 +1,39 @@
+/*
+Template Name: Hyrax UX Admin
+Author: SRGIT
+Email: 
+File: css
+*/
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Light colors*/
+/*Normal Color*/
+/*Extra Variable*/
+/*******************
+Error Page
+******************/
+.error-box {
+  height: 100%;
+  position: fixed;
+  background: url(../../../assets/images/pattern.jpg) repeat #fff;
+  width: 100%; }
+  .error-box .footer {
+    width: 100%;
+    left: 0px;
+    right: 0px; 
+	}
+
+.error-body {
+  padding-top: 5%; }
+  .error-body h1 {
+  
+    font-size: 210px;
+    font-weight: 900;
+	font-family: 'Finger Paint', cursive;
+    text-shadow: 6px 6px 0 #ffffff, 8px 8px 0 #6772e5;
+    line-height: 210px; 
+ color:#6772e5
+	
+	}
+
+

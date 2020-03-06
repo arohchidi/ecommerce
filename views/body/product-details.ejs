@@ -1,0 +1,223 @@
+<!--Breadcrumb Area End-->
+		<!--Single Product Start-->
+		<div class="single-product-area mt-80">
+		    <div class="container">
+		        <div class="row">
+                    <div class="col-md-5">
+                        <!--Tab Content Start-->
+                        <div class="tab-content product-details-large" id="myTabContent-3">
+                          <div class="tab-pane fade show active" id="single-slide-one">
+                              <!--Single Product Image Start-->
+                              <div class="single-product-img img-full">
+                                <img src="../<%= Products.imagePath %>" alt="">
+                                <a class="venobox" data-gall="gallery01" href="img/single-product/large/large1.jpg"><i class="fa fa-search-plus"></i></a>
+                              </div>
+                              <!--Single Product Image End-->
+                          </div>
+                         
+                         
+                        </div>
+                        <!--Tab Content End-->
+                        <!--Tab Menu Start-->
+                        
+                        <!--Tab Menu End-->
+                    </div>
+                    <div class="col-md-7">
+                        <div class="single-product-content">
+                            <h1 class="single-product-name"><%= Products.title %></h1>
+                            <div class="single-product-reviews">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <% if(user) { %>
+                            <form method="post" action="add_to_wishlist/<%= Products.id %>">
+                                 <div class="add">
+                                             <button type="submit" class="add-to-cart btn btn-md"><i class="fa fa-heart fa-1x"></i> wishlist</button>
+                                             
+                                         </div>
+                                  
+                            </form>
+                            <% } %>
+                          
+                            <div class="single-product-price">
+                                <div class="product-discount">
+                                    <span class="price">
+                                        <%= Products.currency %><%=Products.price %></span>
+                                    <span class="discount">-20%</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p>Regular fit, round neckline, short sleeves. Made of extra long staple pima cotton. </p>
+                            </div>
+                            
+                            <div class="single-product-action">
+                                <form action="add_to_cart/<%= Products.id %>" method="POST">
+                                    <div class="product-variants">
+                                        <% if(Products.size && Products.color != '') { %>
+                                        <div class="product-variants-item">
+                                            <span class="control-label">Size</span>
+                                            <select class="nice-select" name="size">
+                                                <option value="1">S</option>
+                                                <option value="2">M</option>
+                                                <option value="3">X</option>
+                                                <option value="4">XL</option>
+                                            </select>
+                                        </div>
+                                        <div class="product-variants-item">
+                                            <span class="control-label">Color</span>
+                                            <select class="nice-select" name="color">
+                                                <option value="1">Red</option>
+                                                <option value="2">Green</option>
+                                                <option value="3">Blue</option>
+                                                <option value="4">White</option>
+                                            </select>
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                    <div class="product-add-to-cart">
+                                        <span class="control-label">Quantity</span>
+                                        <div class="cart-plus-minus">
+                                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="0">
+                                         </div>
+                                         <div class="add">
+                                             <button type="submit" class="add-to-cart btn btn-md"><i class="ion-bag"></i> add-to-cart</button>
+                                             <span class="product-availability">In stock</span>
+                                         </div>
+                                    </div>
+                                </form>
+                            
+                            </div>
+                            
+                        </div>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+		<!--Single Product End-->
+		<!--Single Product Review Tab Start-->
+		<div class="single-product-review-tab mt-80">
+		    <div class="container">
+               <div class="row">
+                 <div class="col-md-12">
+                       <div class="single-product-review-and-description-area">
+                           <!--Review And Description Tab Menu Start-->
+                           <ul class="nav dec-and-review-menu">
+                              <li>
+                                <a class="active" data-toggle="tab" href="#description">Description</a>
+                              </li>
+                              <li>
+                                <a data-toggle="tab" href="#product-details">Product Details</a>
+                              </li>
+                             
+                            </ul>
+                            <!--Review And Description Tab Menu End-->
+                            <!--Review And Description Tab Content Start-->
+                            <div class="tab-content product-review-content-tab mt-30" id="myTabContent-4">
+                              <div class="tab-pane fade show active" id="description">
+                                  <div class="single-product-description">
+                                      <p><%= Products.description %></p>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="product-details">
+                                  <div class="product-details">
+                                      <div class="product-manufacturer">
+                                          <a href="#">
+                                              <img src="img/logo/logo.jpg" alt="">
+                                          </a>
+                                      </div>
+                                      <div class="product-reference">
+                                          <label class="label">Reference </label> <span class="demo-list">demo_13</span>
+                                      </div>
+                                      <div class="product-quantities">
+                                          <label class="label">In stock</label> <span class="item">300 Items</span>
+                                      </div>
+                                      <div class="product-out-of-stock"></div>
+                                      <div class="product-features">
+                                          <h3>Data sheet</h3>
+                                          <div class="table-responsive">
+                                              <table class="table">
+                                                  <tr>
+                                                      <td>Compositions</td>
+                                                      <td>Cotton</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Styles</td>
+                                                      <td>Casual</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Properties</td>
+                                                      <td>Short Sleeve</td>
+                                                  </tr>
+                                              </table>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                            </div>
+                            <!--Review And Description Tab Content End-->
+                       </div>
+                   </div>
+               </div>
+            </div>
+		</div>
+		<!--Single Product Review Tab End-->
+		<!--Product Area Start-->
+		<div class="product-area mt-55">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <!--Section Title Start-->
+		                <div class="section-title">
+		                    <h2>Other products in the same category:</h2>
+		                </div>
+		                <!--Section Title End-->
+		            </div>
+		        </div>
+		        <div class="product-block-content">
+		            <div class="row">
+                        <div class="bestsellerSlide-3 pdr-0 owl-carousel">
+                            <% for(var i =0; i < similarProducts.length; i++) { %>
+                            <div class="col-md-12">
+                                <!--Single Product Start-->
+                                <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img class="first-img img" src="../<%= similarProducts[i].imagePath %>" alt="">
+                                            
+                                        </a>
+                                       
+                                    </div>
+                                    <div class="product-content">
+                                        <h4><a href="single-product.html"><%= similarProducts[i].title %></a></h4>
+                                        <div class="product-price">
+                                            <span class="price">$<%= similarProducts[i].price %></span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <!--Single Product End-->
+                            </div>
+                            <% } %>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+<style>
+    .img{
+        height:150px;
+    }
+
+</style>
+

@@ -1,0 +1,100 @@
+<!--Breadcrumb Area Start-->
+		<div class="breadcrumb-area">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <div class="breadcrumb-content text-center">
+                            <h1 class="breadmome-name">Shopping Cart</h1>
+		                    <ul>
+		                        <li><a href="index.html">Home</a></li>
+		                        <li class="active">Shopping Cart</li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Breadcrumb Area End-->
+	    <!--Shopping Cart Area Strat-->
+<% if (typeof info == 'undefined' || typeof deletionSuccess == 'undefined' || products == null) { %>
+<div class="breadcrumb-content text-center">
+                            <h1 class="breadmome-name">Your cart is empty!</h1>
+		                    
+		                </div>
+<% } else { %>
+<% if (info && typeof info != 'undefined' && info != '')  { %>
+                        <div class="col-md-10 col-md-offset-3 text_align pull-right alert alert-success" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= info %></div>
+                        <% }  %>
+
+<% if (deletionSuccess && typeof deletionSuccess != 'undefined' && deletionSuccess != '')  { %>
+                        <div class="col-md-10 col-md-offset-3 text_align pull-right alert alert-success" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= deletionSuccess %></div>
+                        <% }  %>
+<% if(products  != null) { %>
+
+		<div class="Shopping-cart-area mt-80">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <form action="#">
+		                    <div class="table-content table-responsive">
+		                        <table class="table">
+		                            <thead>
+		                                <tr>
+		                                    <th class="picaboo-product-remove">remove</th>
+		                                    <th class="picaboo-product-thumbnail">images</th>
+		                                    <th class="cart-product-name">Product</th>
+		                                    <th class="picaboo-product-price">Unit Price</th>
+		                                    <th class="picaboo-product-quantity">Quantity</th>
+		                                    <th class="picaboo-product-subtotal">Total</th>
+		                                </tr>
+		                            </thead>
+                                    <% for(var i =0; i < products.length; i++) { %>
+                                    
+		                            <tbody>
+		                                <tr>
+		              <td class="picaboo-product-remove"><a href="/remove/<%=products[i].item._id %>"><i class="fa fa-times"></i></a></td>
+		                                    <td class="picaboo-product-thumbnail"><a href="#"><img src="../<%= products[i].item.imagePath %>" alt="" width="100" height="100"></a></td>
+		                                    <td class="picaboo-product-name"><a href="#"><%= products[i].item.title %></a></td>
+		                                    <td class="picaboo-product-price"><span class="amount">$<%= products[i].item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') %></span></td>
+		                                    <td class="picaboo-product-quantity"><%= products[i].qty %>
+                                            <a href="/reduce/<%=products[i].item._id %>" class="btn btn-success btn-xs">Reduce By One
+                                            </a>
+        
+		                                    </td>
+		                                    <td class="product-subtotal"><span class="amount">$<%= products[i].price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') %></span></td>
+		                                </tr>
+		                                
+		                            </tbody>
+                                    <% }  %>
+		                        </table>
+		                    </div>
+		                    
+		                    <div class="row">
+		                        <div class="col-md-5 ml-auto">
+		                            <div class="cart-page-total">
+		                                <h2>Cart totals</h2>
+		                                <ul>
+		                                    <li>Subtotal <span>$130.00</span></li>
+		                                    <li>Total <span>$<%= totalPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') %></span></li>
+		                                </ul>
+		                                <a href="#">Proceed to checkout</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+<% } else { %>
+<br />
+<hr>
+ <div class="breadcrumb-content text-center">
+                            <h1 class="breadmome-name">Your cart is empty!</h1>
+		                    
+		                </div>
+<% }  %>
+<% }  %>
+		<!--Shopping Cart Area End-->
+		

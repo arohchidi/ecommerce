@@ -1,0 +1,178 @@
+
+		<div class="breadcrumb-area">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <div class="breadcrumb-content text-center">
+                            <h1 class="breadmome-name">My Account</h1>
+		                    <ul>
+		                        <li><a href="/">Home</a></li>
+		                        <li class="active">My Account</li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+<% if (loginSuccess && typeof loginSuccess != 'undefined' && loginSuccess != '')  { %>
+                        <div class="col-md-10 col-md-offset-3 text_align pull-right alert alert-success" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%= loginSuccess %></div>
+                        <% }  %>
+
+
+
+
+         
+
+		<!--Breadcrumb Area End-->
+	    <!--My Account Area Strat-->
+		<div class="my-account white-bg mt-80">
+            <div class="container">
+                <div class="account-dashboard">
+                   <div class="dashboard-upper-info">
+                       <div class="row align-items-center no-gutters">
+                           <div class="col-lg-3 col-md-12">
+                               <div class="d-single-info">
+                                   <p class="user-name">Hello <span>yourmail@info</span></p>
+                                   <p>(not yourmail@info? <a href="#">Log Out</a>)</p>
+                               </div>
+                           </div>
+                           <div class="col-lg-4 col-md-12">
+                               <div class="d-single-info">
+                                   <p>Need Assistance? Customer service at.</p>
+                                   <p>admin@devitems.com.</p>
+                               </div>
+                           </div>
+                           <div class="col-lg-3 col-md-12">
+                               <div class="d-single-info">
+                                   <p>E-mail them at </p>
+                                   <p>support@yoursite.com</p>
+                               </div>
+                           </div>
+                           <div class="col-lg-2 col-md-12">
+                               <div class="d-single-info text-lg-center">
+                                   <a class="view-cart" href="cart.html"><i class="fa fa-cart-plus"></i>view cart</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-2">
+                            <!-- Nav tabs -->
+                            <ul class="nav flex-column dashboard-list" role="tablist">
+                                <li><a class="nav-link active" data-toggle="tab" href="#dashboard">Dashboard</a></li>
+                                <li> <a class="nav-link" data-toggle="tab" href="#orders">Orders</a></li>
+                               
+                                <li><a class="nav-link" data-toggle="tab" href="#address">Addresses</a></li>
+                                <li><a class="nav-link" data-toggle="tab" href="#account-details">Account details</a></li>
+                                <li><a class="nav-link" href="/logout">logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12 col-lg-10">
+                            <!-- Tab panes -->
+                            <div class="tab-content dashboard-content">
+                                <div id="dashboard" class="tab-pane fade show active">
+                                    <h3>Dashboard </h3>
+                                    <p>From your account dashboard. you can easily check &amp; view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a href="#">edit your password and account details.</a></p>
+                                </div>
+                                <div id="orders" class="tab-pane fade">
+                                    <h3>Orders</h3>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order</th>
+                                                    <th>Date</th>
+                                                    <th>Status</th>
+                                                     <th>Total</th>
+                                                     <th>Quantity</th>
+                                                    
+                                                    <th>Delivery Date</th>
+                                                    	 	 	 	
+                                                </tr>
+                                            </thead>
+                                            <% var counter = 0; %> 
+                                            <% for(var i = 0; i < orders.length; i++) { %>
+                                             
+                                               
+                                            <tbody>
+                                                <tr>
+                                                    <td><%= counter + 1; %></td>
+                                                    <td><%= orders[i].createdAt.toDateString() %></td>
+                                                    <% if(orders[i].status !=
+                                                          'NotDelivered') { %>
+                                                    
+                                                    <td><button class="btn btn-success btn-md"><%= orders[i].status %></button> </td>
+                                                    
+                                                    <% } else { %>
+                                                    <td><button class="btn btn-primary btn-md">Not Delivered</button> </td>
+                                                    <% } %>
+                                                    <td><%= orders[i].cart.totalPrice %></td>
+                                                    <td><%= orders[i].cart.totalQty %></td>
+                                                    <td><%= orders[i].deliveryDate %> </td>
+                                                   
+                                                </tr>
+                                               
+                                            </tbody>
+                                            
+                                             <% } %>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div id="address" class="tab-pane">
+                                   <p>The following addresses will be used on the checkout page by default.</p>
+                                    <h4 class="billing-address">Billing address</h4>
+                                    <a class="view" href="#">edit</a>
+                                    <% for(var k =1; k < orders.length; k++){ %>
+                                   <table class="responsive table-bordered striped" width="100%">
+                                    <tr>
+                                       <th>
+                                        <p>Home Address</p>
+                                        </th>
+                                        <td><%=orders[k].address %></td>
+                                       </tr>
+                                    
+                                    </table> 
+                                    <% } %>
+                                </div>
+                                <div id="account-details" class="tab-pane fade">
+                                    <h3>Account details </h3>
+                                    <div class="login">
+                                        <div class="login-form-container">
+                                            <div class="account-login-form">
+                                                <% for(var j =0; j < user.length; j++){ %>
+                                 <form action="edit_account" method="post">
+                                                    
+                                                        
+                                                        
+                                                        
+                                                     <input  type="hidden" name="id" required value="<%=user[j].id %>"> 
+                                                
+                                                
+                                                    <label>Username</label>
+                                                    <input  type="text" name="username" required value="<%=user[j].username %>">
+                                                    
+                                                    <label>Email</label>
+                                                    <input name="email" type="text" value=" <%=user[j].email %>">
+                                                    
+                                                    
+                                                   
+                                                    <div class="button-box">
+                                                        <button type="submit" class="default-btn">save</button>
+                                                    </div>
+                                                   
+                                                </form>
+                                                 <% } %>
+                                            </div>
+                                        </div>
+		                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--My Account Area End-->
+		

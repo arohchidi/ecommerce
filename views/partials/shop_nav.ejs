@@ -1,0 +1,170 @@
+
+	<div class="wrapper">
+		<!--Header Area Start-->
+		<header>
+		    <!--Header Top Area Start-->
+		    <div class="header-top-area">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-6">
+		                    <!--Header Top Left Start-->
+		                    <div class="header-top-left">
+		                        <a href="#">Nigeria’s Fastest Online Shopping Destination</a>
+		                    </div>
+		                    <!--Header Top Left End-->
+		                </div>
+		                <div class="col-md-6">
+                            <!--Header Top Right Start-->
+		                    <div class="header-top-right text-center text-md-right">
+		                        <ul class="header-top-menu">
+		                            
+                                    <li class="drodown-show"><a href="#">My Account <i class="ion-ios-arrow-down"></i></a>
+		                                <!--Header Top Dropdown Start-->
+		                                <ul class="ht-dropdown">
+		                                    <li><a href="/users/register">Register</a></li>
+		                                    <li><a href="/users/login">Login</a></li>
+		                                </ul>
+		                                <!--Header Top Dropdown End-->
+		                            </li>
+		                           <!--- <li class="drodown-show"><a href="#">USD $ <i class="ion-ios-arrow-down"></i></a>
+		                                <!--Header Top Dropdown Start-->
+		                               <!-- <ul class="ht-dropdown">
+		                                    <li><a href="#">EUR €</a></li>
+		                                    <li><a href="#">USD $</a></li>
+		                                </ul>
+		                                <!--Header Top Dropdown End-->
+		                           <!-- </li> -->
+		                            
+		                        </ul>
+		                    </div>
+		                    <!--Header Top Right End-->
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!--Header Top Area End-->
+		    <!--Header Middle Area Start-->
+		    <div class="header-middle-area header-sticky">
+		        <div class="container">
+		            <div class="row">
+		               <div class="col-md-3">
+		                    <!--Logo Start-->
+		                    <div class="logo">
+		                        <a href="/">
+		                            <img src="../img/logo/logo1.jpg" alt="">
+		                        </a>
+		                    </div>
+		                    <!--Logo End-->
+		                </div>
+		                <div class="col-md-9">
+		                    <!--Header Menu Start-->
+		                    <div class="header-menu-area">
+		                        <nav>
+		                            <ul class="main-menu">
+		                                <li class="active"><a href="/">Home</a>
+		                                    <!--Dropdown Menu Start-->
+		                                    
+		                                    <!--Dropdown Menu End-->
+		                                </li>
+		                                <li><a href="/about">About us</a></li>
+		                                
+		                               
+		                            </ul>
+		                        </nav>
+		                    </div>
+		                    <!--Header Menu End-->
+		                    <div class="header-phone">
+		                        <p>Call us: <br><span>(999) 1234 56789</span></p>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+                        <div class="col-12"> 
+                            <!--Mobile Menu Area Start-->
+                            <div class="mobile-menu d-lg-none"></div>
+                            <!--Mobile Menu Area End-->
+                        </div>
+                    </div>
+		        </div>
+		    </div>
+		    <!--Header Middle Area End-->
+		    <!--Header Bottom Area Start-->
+		    <div class="header-bottom-area pb-15">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12 col-lg-3 order-lg-1 order-3">
+                            <!--Category Menu Start-->
+		                    
+                            <!--Category Menu End-->
+		                </div>
+		                <div class="col-md-9 col-lg-6 order-lg-2 order-1">
+		                    <!--Header Top Search Start-->
+		                    <div class="header-top-search">
+                                <div class="search-categories">
+                                     <form action="../search/1" method="get">
+                                        <div class="search-form-input">
+                                            
+                                            <input type="text" placeholder="Search product..." name="search_query">
+                                            <button class="top-search-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+		                    </div>
+		                    <!--Header Top Search End-->
+		                </div>
+		                <div class="col-md-3 col-lg-3 order-lg-3 order-2">
+		                    <!--Mini Cart Start-->
+		                    <div class="mini-cart">
+		                        <a href="/users/shopping_cart">
+                                    <span class="cart-info">
+                                          <span class="text">My Cart</span>
+		                                <span class="cart-total">
+                                            
+                                            <% if(typeof session.cart  == 'undefined' || null || 0) { %>
+                                            0
+                                            </span>
+                                        <% } else { %>
+                                        
+                                        <%= session.cart.totalQty %>
+                                      
+                                        <% } %>
+		                                
+		                            </span>
+		                        </a>
+		                      
+		                    </div>
+		                    <!--Mini Cart End-->
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!--Header Bottom Area End-->
+		</header>
+		<!--Header Area End-->
+		<!--Slider Area Start-->
+        
+        <style>
+            #button{
+                width:100%;
+                color:white;
+                height:50px;
+                background-color:#ff6a00;
+                        margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+                text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+        border:1px solid #fff;
+                padding-top:2px;
+                line-height:10px;
+            }
+            
+            #button:hover{
+                background-color:gray;
+                cursor:pointer;
+            }
+        
+        </style>
